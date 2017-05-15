@@ -1,0 +1,270 @@
+﻿@font-face {
+    font-family: graphite;
+    src: url(../fonts/graphite-regular.ttf);
+}
+
+/*html {
+    background-image:url('../Images/room-2147609.jpg');
+    enable-background:new;
+    background-size:contain;
+    background-position:center top;
+    background-repeat:no-repeat;
+}*/
+body {
+    padding-top: 0;
+    padding-bottom: 0;
+    width:100%;
+    background-image:url("../Images/room-2147609.jpg");
+    background-repeat: no-repeat;
+    background-size: 175% 175%;
+    background-position: center center;
+    height:100vh;
+    /*overflow:hidden;*/
+    /*background-image:url("../Images/monitor-on.png");
+    background-size:contain;
+    background-position:center top;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    enable-background:accumulate;*/
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.navbar-inverse .navbar-toggle {
+    margin-right:30px;
+}
+#nav {
+    background-image:url('../Images/table-new.png');
+    background-position:center top;
+    background-color: transparent;
+    text-shadow: 2px 2px 6px black;
+    enable-background:accumulate;
+}
+.navbar-inverse .navbar-brand {
+    color: beige;
+}
+.navbar-inverse .navbar-brand:hover{
+    background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 10px;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: beige;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 10px;
+}
+#navContainer {
+    padding-left:70px;
+}
+.navbar-fixed-bottom {
+    border-width: 0px 0 0 !important;
+}
+footer {
+    z-index:2147483647;
+    text-align:center;
+    width:100%;
+}
+#copyright {
+    font-size:smaller;
+    padding-right:100px;
+    padding-top:3px;
+    bottom:0;
+    float: right;
+    color:beige;
+}
+#copyright a {
+    color:beige;
+}
+#copyright a:hover {
+    color:white;
+    background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 1px;
+}
+	
+#remote {
+    background-image: url("../Images/remote-control-1143461.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    height: 75%;
+	width: 25%;
+    min-width:200px;
+    position:fixed;
+    bottom:-25%;
+    margin:auto auto auto -12.5%;
+    left:50%;
+    z-index:10000;
+    transform:perspective(525px) translateZ(0) rotateX(60deg) rotateY(0deg) rotateZ(0deg);
+    transition:all 1000ms ease-in-out 0s;
+    -webkit-transition:all 1000ms ease-in-out 0s;
+}
+.row {
+
+}
+.row.equal {
+    display: flex;
+    flex-wrap: wrap;
+}
+/*#top {
+    background-image: url("../Images/top.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center top;
+    height:50px;
+}*/
+#tl {
+    background-image: url("../Images/tl.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center top;
+    height:50px;
+}
+#t {
+    background-image: url("../Images/t.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center top;
+    height: 50px;
+}
+#tr {
+    background-image: url("../Images/tr.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center top;
+    height:50px;
+}
+#l {
+    background-image: url("../Images/l.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center top;
+}
+#r {
+    background-image: url("../Images/r.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center top;
+}
+#mid {
+}
+#mainContent {
+    height:100%;
+      display:flex;
+      flex-direction:column;
+}
+#bot {
+    /*background-image: url("../Images/b.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center top;
+    top: 0;
+    bottom:0;
+    min-height:100px;*/
+      flex-grow: 1;
+      flex-shrink: 0;
+      display: flex;
+}
+#bl {
+    background-image: url("../Images/bl.png");
+    background-repeat: no-repeat;
+    background-size: 100% 937px;
+    background-position: center top;
+}
+#b {
+    background-image: url("../Images/bbb.png");
+    background-repeat: no-repeat;
+    background-size: 100% 937px;
+    background-position: center top;
+}
+#br {
+    background-image: url("../Images/br.png");
+    background-repeat: no-repeat;
+    background-size: 100% 937px;
+    background-position: center top;
+}
+
+#RenderBody {
+    background-color: red;
+}
+
+.owl-carousel {
+    margin:0px;
+    padding:10px;
+    color: red;
+}
+h1 {
+    /*font-family: 'Monofett', cursive;*/
+    font-family: graphite, cursive;
+    font-size:4em;
+    margin-left:20px;
+}
+.table {
+    height:100px;
+}
+tr {
+    margin:0 !important;
+    padding:0 !important;
+}
+.table > tbody > tr > td {
+    margin:0 !important;
+    padding:0 !important;
+}
+figcaption {
+    background-color:rgba(255, 255, 255, 0.5);
+    position:absolute;
+    bottom:0;
+    left:0; 
+    right:0;
+    color: black;
+    text-align:center;
+}
+figcaption > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1em;
+    font-weight:bold;
+    padding:0;
+    margin:5px auto 5px 10px;
+
+}
+figcaption > p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1em;
+    font-weight:bold;
+    padding:0;
+    margin:5px auto 5px 10px;
+
+}
+
+@media only screen and (max-width: 700px) {
+    #remote {
+        display:none;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    body {
+        /*background-size:unset;*/
+    }
+}
+@media only screen and (max-width: 767px) {
+    body {
+        height:100%;
+    }
+}

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows - @ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Lakki+Reddy|Monofett" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+    
+    @Scripts.Render("~/Scripts/remote.js")
+    @*@Scripts.Render("~/Scripts/jquery.mousewheel.min.js")
+    @Scripts.Render("~/Scripts/owl.carousel.js")*@
+</head>
+<body>
+    <div id="remote"></div>
+    <div class="navbar navbar-inverse navbar-fixed-bottom" id="nav">
+        <div class="container" id="navContainer">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("TV Base", "Index", "TVTables", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Home", "Index", "TVTables")</li>*@
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                <p class="navbar-text" id="copyright">&copy; @DateTime.Now.Year - <a href="http://www.MatthewKersley.co.uk">MatthewKersley.co.uk</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="mainContent" class="container body-content">
+        <div class="row" id="top">
+            <div id="tl" class="col-xs-1"></div>
+            <div id="t" class="col-xs-10"></div>
+            <div id="tr" class="col-xs-1"></div>
+        </div>
+        <div class="row equal" id="mid">
+            <div id="l" class="col-xs-1"></div>
+            <div id="RenderBody" class="col-xs-10">
+                @RenderBody()
+            </div>
+            <div id="r" class="col-xs-1"></div>
+        </div>
+        <div class="row" id="bot">
+            <div id="bl" class="col-xs-1"></div>
+            <div id="b" class="col-xs-10"></div>
+            <div id="br" class="col-xs-1"></div>
+        </div>
+        @*<footer>
+            <p>&copy; @DateTime.Now.Year - <a href="http://www.MatthewKersley.co.uk">MatthewKersley.co.uk</a></p>
+        </footer>*@
+    </div>
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
