@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<TVDatabase.Models.TVTable>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Browse";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<span id="browseTitle">
+    Browse All Shows
+</span>
+<span>
+    @Html.ActionLink("Add New Show", "Create", null, new { @class = "btn btn-success", @style = "vertical-align: middle; text-align:center; margin:10px; position:relative" })
+</span>
 
 @using (Html.BeginForm())
 {
@@ -29,7 +30,7 @@
                     <img alt="Details" src="@Url.Content(item.Image)">
                     <figcaption>
                         <h1>@item.ShowName</h1>
-                        <p>Released: @item.DateFrom</p>
+                        <p>Seasons: @item.NumberOfSeasons</p>
                         <p>Genre: @item.Genre</p>
                     </figcaption>
                 </figure>

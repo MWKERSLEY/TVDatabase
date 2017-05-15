@@ -45,7 +45,7 @@ body {
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 90%;
 }
 .navbar-inverse .navbar-toggle {
     margin-right:30px;
@@ -253,6 +253,22 @@ figcaption > p {
 
 }
 
+#browseTitle {
+    margin: 20px !important;
+    font-size: 3em;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.form-group {
+    float:left;
+    margin:5px;
+    padding:10px;
+}
+
+#detailsPic {
+
+}
+
 @media only screen and (max-width: 700px) {
     #remote {
         display:none;
@@ -261,6 +277,9 @@ figcaption > p {
 @media only screen and (max-width: 1200px) {
     body {
         /*background-size:unset;*/
+    }
+    #remote {
+        bottom:-40%;
     }
 }
 @media only screen and (max-width: 767px) {

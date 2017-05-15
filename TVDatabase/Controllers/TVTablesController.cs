@@ -71,7 +71,7 @@ namespace TVDatabase.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,ShowName,Genre,DateFrom,DateTo,NumberOfSeasons,CurrentlyRunning,Description,Actors,PeakViewers,Network,Image,Rating,Country")] TVTable tVTable)
+        public ActionResult Create([Bind(Include = "ID,ShowName,Genre,DateFrom,DateTo,NumberOfSeasons,CurrentlyRunning,Description,Actors,PeakViewers,Network,Image,Rating,Country,Views,Likes,Dislikes,SecretPassword")] TVTable tVTable)
         {
             if (ModelState.IsValid)
             {

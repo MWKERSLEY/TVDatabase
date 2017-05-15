@@ -1,29 +1,41 @@
 ﻿@model TVDatabase.Models.TVTable
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Html.DisplayFor(model => model.ShowName);
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>TVTable</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ShowName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ShowName)
-        </dd>
-
+<span id="browseTitle" class="col-xs-12">
+    @Html.DisplayFor(model => model.ShowName) - Show Details
+</span>
+<div class="row">
+    <span class="col-xs-3">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
+    </span>
+    <span class="col-xs-3">
+        @Html.ActionLink("Edit Show", "Edit", new { id = Model.ID }, new { @class = "btn btn-success" })
+    </span>
+    <span class="col-xs-3">
+        @Html.ActionLink("Delete Show", "Delete", new { id = Model.ID }, new { @class = "btn btn-danger" })
+    </span>
+</div>
+<br />
+<br />
+<div class="row">
+    <dl class="dl-horizontal col-xs-8" id="details">
         <dt>
             @Html.DisplayNameFor(model => model.Genre)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
         </dd>
 
         <dt>
@@ -59,14 +71,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Actors)
         </dt>
 
@@ -91,14 +95,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Rating)
         </dt>
 
@@ -114,9 +110,30 @@
             @Html.DisplayFor(model => model.Country)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Views)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Views)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Likes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Likes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dislikes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dislikes)
+        </dd>
+
     </dl>
+    <img src="@Url.Content(Model.Image)" id="detailsPic" class="col-xs-4">
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

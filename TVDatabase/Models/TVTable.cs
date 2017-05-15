@@ -15,6 +15,13 @@ namespace TVDatabase.Models
 
     public partial class TVTable
     {
+        public TVTable()
+        {
+            CurrentlyRunning = true;
+            Views = 0;
+            Likes = 0;
+            Dislikes = 0;
+        }
         public int ID { get; set; }
 
         [Display(Name = "Show Name")]
@@ -26,27 +33,54 @@ namespace TVDatabase.Models
         [Required]
         [StringLength(30)]
         public string Genre { get; set; }
+
+        [Display(Name = "Started On")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> DateFrom { get; set; }
+
+        [Display(Name = "Ended On")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> DateTo { get; set; }
+
+
+        [Display(Name = "Number of Seasons")]
         public Nullable<int> NumberOfSeasons { get; set; }
-        public Nullable<bool> CurrentlyRunning { get; set; }
-        [Required]
+
+        [Display(Name = "Currently Running")]
+        public bool CurrentlyRunning { get; set; }
+        
         public string Description { get; set; }
-        [Required]
+        
+        [Display(Name = "Starring")]
         public string Actors { get; set; }
-        [Required]
+        
+        [Display(Name = "Highest Domestic Viewing Figures")]
         public string PeakViewers { get; set; }
-        [Required]
+        
+        [Display(Name = "Broadcasting Network")]
         public string Network { get; set; }
-        [Required]
+
         public string Image { get; set; }
+
         [Range(0, 10)]
+        [Display(Name = "IMDB Rating")]
         public Nullable<double> Rating { get; set; }
-        [Required]
+        
+        [Display(Name = "Produced In")]
         public string Country { get; set; }
+
+        [Display(Name = "Database Views")]
         public Nullable<int> Views { get; set; }
+
+        [Display(Name = "TV Base Likes")]
         public Nullable<int> Likes { get; set; }
+
+        [Display(Name = "TV Base Dislikes")]
         public Nullable<int> Dislikes { get; set; }
+        
+        [Display(Name = "Deletion Password")]
         public string SecretPassword { get; set; }
     }
 }
