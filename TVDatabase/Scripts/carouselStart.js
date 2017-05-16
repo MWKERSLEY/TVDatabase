@@ -5,7 +5,7 @@ function cStart() {
     owl.owlCarousel({
         loop: false,
         margin: 15,
-        autoplay: 4000,
+        autoplay: 2500,
         responsiveClass:true,
         dots: true,
         center: true,

@@ -19,7 +19,6 @@
         <input type="submit" value="Filter" />
     </p>
 }
-
 <div class="row owl-carousel owl-theme">
     @foreach (var item in Model)
     {
@@ -27,10 +26,17 @@
             @item.ShowName
             <a href="@Url.Action("Details", "TVTables", new { id = item.ID })" title="@item.ShowName - Show Details">
                 <figure>
-                    <img alt="Details" src="@Url.Content(item.Image)">
+                    @*<img alt="Details" src="@Url.Content(item.Image)">*@
+                    @if (!string.IsNullOrEmpty(item.Image)) {
+                        <img alt="Details" src="@Url.Content(item.Image)">
+                    }
+                    else
+                    {
+                        <img alt="Details" src="~/Images/tv.png">
+                    }
                     <figcaption>
                         <h1>@item.ShowName</h1>
-                        <p>Seasons: @item.NumberOfSeasons</p>
+                        @*<p>Seasons: @item.NumberOfSeasons</p>*@
                         <p>Genre: @item.Genre</p>
                     </figcaption>
                 </figure>

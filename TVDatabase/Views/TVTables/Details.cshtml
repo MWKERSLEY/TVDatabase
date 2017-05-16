@@ -135,5 +135,12 @@
         </dd>
 
     </dl>
-    <img src="@Url.Content(Model.Image)" id="detailsPic" class="col-xs-4">
+    @if (string.IsNullOrEmpty(Model.Image))
+    {
+        <img src="~/Images/tv.png" id="detailsPic" class="col-xs-4">
+    }
+    else
+    {
+        <img src="@Url.Content(Model.Image)" id="detailsPic" class="col-xs-4">
+    }
 </div>

@@ -26,7 +26,7 @@
             @Html.ActionLink("Delete Show", "Delete", new { id = Model.ID }, new { @class = "btn btn-danger" })
         </span>
 
-        @Html.ValidationSummary(false, "Some required fields haven't been filled in.", new { @class = "text-danger" })
+        @Html.ValidationSummary(true, "Some required fields haven't been filled in.", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)        <div class="form-group col-xs-6">
             @Html.LabelFor(model => model.ShowName, htmlAttributes: new { @class = "control-label" })
             <div class="col-md-6">
