@@ -181,12 +181,14 @@ footer {
       flex-grow: 1;
       flex-shrink: 0;
       display: flex;
+
 }
 #bl {
     background-image: url("../Images/bl.png");
     background-repeat: no-repeat;
     background-size: 100% 937px;
     background-position: center top;
+    min-height:100px;
 }
 #b {
     background-image: url("../Images/bbb.png");

@@ -12,7 +12,7 @@ namespace TVDatabase.Controllers
 {
     public class TVTablesController : Controller
     {
-        private TVDatabaseEntities db = new TVDatabaseEntities();
+        private TVDatabaseEntities1 db = new TVDatabaseEntities1();
 
         // GET: TVTables
         public ActionResult Index(string movieGenre, string searchString)
@@ -57,8 +57,70 @@ namespace TVDatabase.Controllers
             {
                 return HttpNotFound();
             }
+
+            string referrer = HttpContext.Request.UrlReferrer.ToString();
+            if (!referrer.Contains("Details") && !referrer.Contains("Delete") && !referrer.Contains("Edit"))
+            {
+                int currentViews = tVTable.Views;
+                tVTable.Views = currentViews + 1;
+
+                if (ModelState.IsValid)
+                {
+                    db.Entry(tVTable).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+            }
+            ViewBag.refer = HttpContext.Request.UrlReferrer.ToString();
             return View(tVTable);
         }
+
+        public ActionResult Like(int id)
+        {
+            TVTable show = db.TVTables.Find(id);
+
+            int currentLikes = show.Likes;
+            show.Likes = currentLikes + 1;
+
+            if (ModelState.IsValid)
+            {
+                db.Entry(show).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("Details", new { id });
+        }
+
+        public ActionResult Dislike(int id)
+        {
+            TVTable show = db.TVTables.Find(id);
+
+            int currentDislikes = show.Dislikes;
+            show.Dislikes = currentDislikes + 1;
+
+            if (ModelState.IsValid)
+            {
+                db.Entry(show).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("Details", new { id });
+        }
+
+        //public ActionResult Views(int id)
+        //{
+        //    TVTable show = db.TVTables.Find(id);
+
+        //    int currentViews = show.Views;
+        //    show.Views = currentViews + 1;
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(show).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //    }
+
+        //    return RedirectToAction("Details", new { id });
+        //}
 
         // GET: TVTables/Create
         public ActionResult Create()
@@ -138,6 +200,36 @@ namespace TVDatabase.Controllers
             db.TVTables.Remove(tVTable);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Table(string movieGenre, string searchString)
+        {
+            //return View(db.Movies.ToList());
+
+            //genre search
+            var GenreLst = new List<string>();
+            var GenreQry = from d in db.TVTables
+                           orderby d.Genre
+                           select d.Genre;
+            GenreLst.AddRange(GenreQry.Distinct());
+            ViewBag.movieGenre = new SelectList(GenreLst);
+
+            //title search
+            var movies = from m in db.TVTables
+                         select m;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.ShowName.Contains(searchString));
+            }
+
+            //last bit of genre search
+            //movieGenre = "Science Fiction";
+            if (!String.IsNullOrEmpty(movieGenre))
+            {
+                movies = movies.Where(x => x.Genre == movieGenre);
+            }
+
+            return View(movies.ToList());
         }
 
         protected override void Dispose(bool disposing)

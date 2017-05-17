@@ -1,7 +1,16 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<span id="browseTitle">
+    About TV Base
+</span>
+<ul>
+    <li>This is a C# ASP.NET MVC 5 single CRUD database project created by Matthew Kersley.</li>
+    <li>A database of TV shows can be viewed on a carousel on the main page of the website.</li>
+    <li>Shows can be added to the database from the homepage.</li>
+    <li>Selecting a TV show will read a database object.</li>
+    <li>From there, you can edit, delete, like or dislike the show.</li>
+    <li>A count of the number of times a show is viewed from the database is also kept. This won't increment if the show is viewed from a 'RUD' page.</li>
+    <li>A traditional table view of the database can be viewed @Html.ActionLink("here", "Table", "TVTables").</li>
+</ul>

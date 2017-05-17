@@ -4,24 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="TVDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
+      <Schema Namespace="TVDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TVTable">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ShowName" Type="varchar(max)" Nullable="false" />
-          <Property Name="Genre" Type="varchar" MaxLength="50" />
+          <Property Name="Genre" Type="varchar(max)" Nullable="false" />
           <Property Name="DateFrom" Type="datetime" />
           <Property Name="DateTo" Type="datetime" />
           <Property Name="NumberOfSeasons" Type="int" />
@@ -32,37 +22,27 @@
           <Property Name="Network" Type="varchar(max)" />
           <Property Name="Image" Type="varchar(max)" />
           <Property Name="Rating" Type="float" />
-          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar(max)" />
           <Property Name="Views" Type="int" />
           <Property Name="Likes" Type="int" />
           <Property Name="Dislikes" Type="int" />
-          <Property Name="SecretPassword" Type="varchar" MaxLength="50" />
+          <Property Name="SecretPassword" Type="varchar(max)" />
         </EntityType>
         <EntityContainer Name="TVDatabaseModelStoreContainer">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TVTable" EntityType="Self.TVTable" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TVDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="TVTable">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ShowName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Genre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Genre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DateFrom" Type="DateTime" Precision="3" />
           <Property Name="DateTo" Type="DateTime" Precision="3" />
           <Property Name="NumberOfSeasons" Type="Int32" />
@@ -73,14 +53,13 @@
           <Property Name="Network" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Rating" Type="Double" />
-          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Views" Type="Int32" />
           <Property Name="Likes" Type="Int32" />
           <Property Name="Dislikes" Type="Int32" />
-          <Property Name="SecretPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SecretPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="TVDatabaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+        <EntityContainer Name="TVDatabaseEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TVTables" EntityType="Self.TVTable" />
         </EntityContainer>
       </Schema>
@@ -88,25 +67,10 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TVDatabaseModelStoreContainer" CdmEntityContainer="TVDatabaseEntities">
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="TVDatabaseModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+        <EntityContainerMapping StorageEntityContainer="TVDatabaseModelStoreContainer" CdmEntityContainer="TVDatabaseEntities1">
           <EntitySetMapping Name="TVTables">
             <EntityTypeMapping TypeName="TVDatabaseModel.TVTable">
               <MappingFragment StoreEntitySet="TVTable">
-                <ScalarProperty Name="SecretPassword" ColumnName="SecretPassword" />
-                <ScalarProperty Name="Dislikes" ColumnName="Dislikes" />
-                <ScalarProperty Name="Likes" ColumnName="Likes" />
-                <ScalarProperty Name="Views" ColumnName="Views" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ShowName" ColumnName="ShowName" />
                 <ScalarProperty Name="Genre" ColumnName="Genre" />
@@ -121,6 +85,10 @@
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Rating" ColumnName="Rating" />
                 <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Views" ColumnName="Views" />
+                <ScalarProperty Name="Likes" ColumnName="Likes" />
+                <ScalarProperty Name="Dislikes" ColumnName="Dislikes" />
+                <ScalarProperty Name="SecretPassword" ColumnName="SecretPassword" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

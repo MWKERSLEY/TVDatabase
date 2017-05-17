@@ -13,10 +13,10 @@ namespace TVDatabase.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TVDatabaseEntities : DbContext
+    public partial class TVDatabaseEntities1 : DbContext
     {
-        public TVDatabaseEntities()
-            : base("name=TVDatabaseEntities")
+        public TVDatabaseEntities1()
+            : base("name=TVDatabaseEntities1")
         {
         }
     
@@ -25,7 +25,6 @@ namespace TVDatabase.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TVTable> TVTables { get; set; }
     }
 }

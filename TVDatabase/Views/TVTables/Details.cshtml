@@ -8,14 +8,23 @@
     @Html.DisplayFor(model => model.ShowName) - Show Details
 </span>
 <div class="row">
-    <span class="col-xs-3">
+    <span class="col-xs-2">
         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
     </span>
-    <span class="col-xs-3">
+    <span class="col-xs-2">
         @Html.ActionLink("Edit Show", "Edit", new { id = Model.ID }, new { @class = "btn btn-success" })
     </span>
     <span class="col-xs-3">
         @Html.ActionLink("Delete Show", "Delete", new { id = Model.ID }, new { @class = "btn btn-danger" })
+    </span>
+    @*<span class="col-xs-2">
+        @Html.ActionLink("Seen?", "Views", new { id = Model.ID }, new { @class = "btn btn-primary" })
+    </span>*@
+    <span class="col-xs-2">
+        @Html.ActionLink("Like", "Like", new { id = Model.ID }, new { @class = "btn btn-success" })
+    </span>
+    <span class="col-xs-2">
+        @Html.ActionLink("Dislike", "Dislike", new { id = Model.ID }, new { @class = "btn btn-danger" })
     </span>
 </div>
 <br />

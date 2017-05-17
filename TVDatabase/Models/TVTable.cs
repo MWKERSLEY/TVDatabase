@@ -50,15 +50,15 @@ namespace TVDatabase.Models
 
         [Display(Name = "Currently Running")]
         public bool CurrentlyRunning { get; set; }
-        
+
         public string Description { get; set; }
-        
+
         [Display(Name = "Starring")]
         public string Actors { get; set; }
-        
+
         [Display(Name = "Highest Domestic Viewing Figures")]
         public string PeakViewers { get; set; }
-        
+
         [Display(Name = "Broadcasting Network")]
         public string Network { get; set; }
 
@@ -67,19 +67,19 @@ namespace TVDatabase.Models
         [Range(0, 10)]
         [Display(Name = "IMDB Rating")]
         public Nullable<double> Rating { get; set; }
-        
+
         [Display(Name = "Produced In")]
         public string Country { get; set; }
 
-        [Display(Name = "Database Views")]
-        public Nullable<int> Views { get; set; }
+        [Display(Name = "TV Base Views")]
+        public int Views { get; set; }
 
         [Display(Name = "TV Base Likes")]
-        public Nullable<int> Likes { get; set; }
+        public int Likes { get; set; }
 
         [Display(Name = "TV Base Dislikes")]
-        public Nullable<int> Dislikes { get; set; }
-        
+        public int Dislikes { get; set; }
+
         [Display(Name = "Deletion Password")]
         public string SecretPassword { get; set; }
     }
