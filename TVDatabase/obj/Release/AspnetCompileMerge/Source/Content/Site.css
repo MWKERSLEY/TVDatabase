@@ -205,13 +205,13 @@ footer {
 }
 
 #RenderBody {
-    background-color: red;
+    background-color: rgb(255, 76, 76);
 }
 
 .owl-carousel {
     margin:0px;
     padding:10px;
-    color: red;
+    color: rgb(255, 76, 76);
 }
 h1 {
     /*font-family: 'Monofett', cursive;*/
@@ -273,7 +273,7 @@ figcaption > p {
 }
 @media only screen and (min-width: 768px) {
     #b {
-        min-height:200px;
+        min-height:250px;
     }
 }
 @media only screen and (max-width: 1200px) {
@@ -287,12 +287,6 @@ figcaption > p {
 @media only screen and (max-width: 767px) {
     body {
         height:100%;
-        padding: 0;
-        margin:0;
-    }
-    html {
-        padding:0;
-        margin:0;
     }
     #remote {
         display:none;

@@ -165,13 +165,13 @@ namespace TVDatabase.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,ShowName,Genre,DateFrom,DateTo,NumberOfSeasons,CurrentlyRunning,Description,Actors,PeakViewers,Network,Image,Rating,Country")] TVTable tVTable)
+        public ActionResult Edit([Bind(Include = "ID,ShowName,Genre,DateFrom,DateTo,NumberOfSeasons,CurrentlyRunning,Description,Actors,PeakViewers,Network,Image,Rating,Country,Views,Likes,Dislikes,SecretPassword")] TVTable tVTable)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(tVTable).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new { tVTable.ID });
             }
             return View(tVTable);
         }

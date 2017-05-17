@@ -26,9 +26,9 @@
         <span class="col-xs-3">
             @Html.ActionLink("Delete Show", "Delete", new { id = Model.ID }, new { @class = "btn btn-primary" })
         </span>
-
         @Html.ValidationSummary(true, "Some required fields haven't been filled in.", new { @class = "text-primary" })
-        @Html.HiddenFor(model => model.ID)        <div class="form-group col-xs-6">
+
+        <div class="form-group col-xs-6">
             @Html.LabelFor(model => model.ShowName, htmlAttributes: new { @class = "control-label" })
             <div class="col-md-6">
                 @Html.EditorFor(model => model.ShowName, new { htmlAttributes = new { @class = "form-control" } })
@@ -124,6 +124,11 @@
         </div>
 
     </div>
+    @Html.HiddenFor(model => model.ID)
+    @Html.HiddenFor(model => model.Views)
+    @Html.HiddenFor(model => model.Likes)
+    @Html.HiddenFor(model => model.Dislikes)
+    @Html.HiddenFor(model => model.SecretPassword)
 }
 
 @*@section Scripts {
