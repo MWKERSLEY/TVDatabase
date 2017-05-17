@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TVDatabaseModelStoreContainer" CdmEntityContainer="TVDatabaseEntities1">
+    <EntitySetMapping Name="TVTables">
+      <EntityTypeMapping TypeName="TVDatabaseModel.TVTable">
+        <MappingFragment StoreEntitySet="TVTable">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ShowName" ColumnName="ShowName" />
+          <ScalarProperty Name="Genre" ColumnName="Genre" />
+          <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+          <ScalarProperty Name="DateTo" ColumnName="DateTo" />
+          <ScalarProperty Name="NumberOfSeasons" ColumnName="NumberOfSeasons" />
+          <ScalarProperty Name="CurrentlyRunning" ColumnName="CurrentlyRunning" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Actors" ColumnName="Actors" />
+          <ScalarProperty Name="PeakViewers" ColumnName="PeakViewers" />
+          <ScalarProperty Name="Network" ColumnName="Network" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Views" ColumnName="Views" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Dislikes" ColumnName="Dislikes" />
+          <ScalarProperty Name="SecretPassword" ColumnName="SecretPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

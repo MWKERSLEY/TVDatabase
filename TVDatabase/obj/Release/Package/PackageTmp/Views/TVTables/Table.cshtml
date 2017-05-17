@@ -1,0 +1,204 @@
+﻿@model IEnumerable<TVDatabase.Models.TVTable>
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<span id="browseTitle">
+    Browse All Shows
+</span>
+<span>
+    @Html.ActionLink("Add New Show", "Create", null, new { @class = "btn btn-success", @style = "vertical-align: middle; text-align:center; margin:10px; position:relative" })
+</span>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Genre: @Html.DropDownList("movieGenre", "All")
+        Title: @Html.TextBox("SearchString")
+        <input type="submit" value="Filter" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfSeasons)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfSeasons)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+</table>
+@*<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.mousewheel.js"></script>
+<script src="~/Scripts/owl.carousel.js"></script>
+<script src="~/Scripts/carouselStart.js"></script>*@
+
+@*@model IEnumerable<TVDatabase.Models.TVTable>
+
+@{
+    ViewBag.Title = "All Shows";
+}
+
+<div class="row">
+    <div class="col-xs-5">
+        <h1>Favourite TV Shows</h1>
+    </div>
+    <div class="col-xs-1"></div>
+    <div class="center-block col-xs-3" >
+        @Html.ActionLink("Add New Show", "Create", null, new { @class = "btn btn-success center-block", @style = "vertical-align: middle; text-align:center; margin-top:15%; position:relative" })
+    </div>
+    @using (Html.BeginForm("Index", "TVTables", FormMethod.Get))
+    {
+        <p>
+            Genre: @Html.DropDownList("movieGenre", "All")
+            Title: @Html.TextBox("SearchString")
+            <input type="submit" value="Filter" />
+        </p>
+    }
+</div>
+<div class="row owl-carousel owl-theme">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("Details", "TVTables", new { id = item.ID })" title="@item.ShowName - Show Details" >
+            <figure>
+                <img alt="Details" src="@Url.Content(item.Image)">
+                <figcaption style="background-color:rgba(255, 255, 255, 0.3); position:absolute">
+                    @item.ShowName
+                    <br />
+                    Released: @item.DateFrom
+                    <br />
+                    Genre: @item.Genre
+                </figcaption>
+            </figure>
+        </a>
+    }
+</div>*@
+
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfSeasons)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentlyRunning)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Actors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PeakViewers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Network)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfSeasons)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentlyRunning)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Actors)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PeakViewers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Network)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>*@
+@*<script src="~/Scripts/carouselStart.js"></script>*@
+@*@Scripts.Render("~/Scripts/carouselStart.js")*@

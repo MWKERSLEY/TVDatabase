@@ -80,6 +80,8 @@ namespace TVDatabase.Models
         [Display(Name = "TV Base Dislikes")]
         public int Dislikes { get; set; }
 
+        [RegularExpression(@"^[a-zA-Z0-9]+$")]
+        [StringLength(10)]
         [Display(Name = "Deletion Password")]
         public string SecretPassword { get; set; }
     }
