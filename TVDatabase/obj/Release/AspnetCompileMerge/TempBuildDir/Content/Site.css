@@ -170,6 +170,8 @@ footer {
     height:100%;
       display:flex;
       flex-direction:column;
+      flex-shrink: 0;
+      flex-basis: auto;
 }
 #bot {
     /*background-image: url("../Images/b.png");
@@ -182,7 +184,8 @@ footer {
       flex-grow: 1;
       flex-shrink: 0;
       display: flex;
-
+      flex-shrink: 0;
+      flex-basis: auto;
 }
 #bl {
     background-image: url("../Images/bl.png");
@@ -195,7 +198,7 @@ footer {
     background-repeat: no-repeat;
     background-size: 100% 937px;
     background-position: center top;
-    min-height:100px;
+    min-height:250px;
 }
 #br {
     background-image: url("../Images/br.png");
@@ -271,9 +274,14 @@ figcaption > p {
 #detailsPic {
 
 }
+@supports (-webkit-appearance:none) {
+    body {
+        height:100%;
+    }
+}
 @media only screen and (min-width: 768px) {
     #b {
-        min-height:250px;
+        /*min-height:250px;*/
     }
 }
 @media only screen and (max-width: 1200px) {
@@ -298,10 +306,9 @@ figcaption > p {
     }*/
 }
 
-@media only screen and (max-width: 359px) {
-    #tl, #tr {
-        /*width: 26px !important;*/
-    }
-    #top {
+@media only screen and (max-width: 420px) {
+    .col-xs-1 {
+        padding-right: 0;
+        padding-left: 0;
     }
 }
