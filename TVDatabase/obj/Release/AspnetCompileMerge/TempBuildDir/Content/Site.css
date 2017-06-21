@@ -10,6 +10,10 @@
     background-position:center top;
     background-repeat:no-repeat;
 }*/
+html {
+    
+    height:100%;
+}
 body {
     padding-top: 0;
     padding-bottom: 0;
@@ -18,7 +22,8 @@ body {
     background-repeat: no-repeat;
     background-size: 175% 175%;
     background-position: center center;
-    height:100vh;
+    height:100%;
+    min-height:800px;
     /*overflow:hidden;*/
     /*background-image:url("../Images/monitor-on.png");
     background-size:contain;
@@ -198,7 +203,7 @@ footer {
     background-repeat: no-repeat;
     background-size: 100% 937px;
     background-position: center top;
-    min-height:250px;
+    /*min-height:200px;*/
 }
 #br {
     background-image: url("../Images/br.png");
@@ -208,9 +213,50 @@ footer {
 }
 
 #RenderBody {
-    background-color: rgb(255, 76, 76);
+    /*background-color: #c3e6fc;*/
+    background-color:#88A4F2;
+    border: 8px solid #000077;
+    padding-left:0 !important;
+    padding-right:0 !important;
 }
+#topper {
+    padding-top:10px;
+    padding-left:20px;
+    background-color:#9FB6F4;
+}
+.topButton {
+}
+form p {
+    padding-left:20px;
+    background-color:#9FB6F4;
+    padding-bottom:10px;
+    padding-top:10px;
+    border-bottom:5px solid #000077;
+    font-weight:bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.owl-dot {
 
+}
+.owl-carousel.owl-theme.owl-loaded.owl-drag {
+    /*background-color: #c3e6fc;*/
+    background-color:#88A4F2;
+}
+.owl-dots {
+    background-color:#9FB6F4;
+    border-radius: 20px;
+    border: 8px solid #000077;
+}
+.owl-stage {
+    background-color:#9FB6F4;
+}
+.owl-stage-outer {
+    background-color: #87CEFA;
+    padding: 15px 0;
+    border-radius: 20px;
+    border: 8px solid #000077;
+    background-color:#9FB6F4;
+}
 .owl-carousel {
     margin:0px;
     padding:10px;
@@ -234,12 +280,13 @@ tr {
     padding:0 !important;
 }
 figcaption {
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color: rgba(200,200,200, 0.5);
     position:absolute;
     bottom:0;
     left:0; 
     right:0;
-    color: black;
+    color: white;
+    text-shadow: 1px 1px 3px black;
     text-align:center;
 }
 figcaption > h1 {
@@ -260,9 +307,12 @@ figcaption > p {
 }
 
 #browseTitle {
-    margin: 20px !important;
     font-size: 3em;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Lakki Reddy', cursive;
+    font-weight: bold;
+    text-shadow: 0 0 2px grey;
+    vertical-align: middle;
+    color: #000077;
 }
 
 .form-group {

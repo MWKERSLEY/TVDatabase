@@ -12,7 +12,7 @@ function cStart() {
         //stagePadding: 100,
         responsive:{
             0:{
-                items: 1.2,
+                items: 1.4,
                 //loop: false
             },
             600:{

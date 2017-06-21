@@ -4,35 +4,36 @@
     ViewBag.Title = "Delete";
 }
 
-<span id="browseTitle">
-    Delete @Model.ShowName?
-</span>
-
-<h3>Are you sure you want to delete @Model.ShowName from TV Base?</h3>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <span class="col-xs-3">
-        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
+<div id="topper">
+    <span id="browseTitle">
+        Delete @Model.ShowName?
     </span>
-    <span class="col-xs-3">
-        @Html.ActionLink("Back to Show", "Details", new { id = Model.ID }, new { @class = "btn btn-warning" })
-    </span>
+    <h3>Are you sure you want to delete @Model.ShowName from TV Base?</h3>
 
-    @*<div class="form-group col-xs-6">
-        @Html.LabelFor(model => model.SecretPassword, htmlAttributes: new { @class = "control-label" })
-        <div class="col-md-6">
-            @Html.EditorFor(model => model.DateFrom, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>*@
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-    <span class="form-actions no-color col-xs-3">
-        <input type="submit" value="Delete" class="btn btn-danger" />
-    </span>
-    <br />
-}
+        <span class="col-xs-3">
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning" })
+        </span>
+        <span class="col-xs-3">
+            @Html.ActionLink("Back to Show", "Details", new { id = Model.ID }, new { @class = "btn btn-warning" })
+        </span>
+
+        @*<div class="form-group col-xs-6">
+                @Html.LabelFor(model => model.SecretPassword, htmlAttributes: new { @class = "control-label" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.DateFrom, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>*@
+
+        <span class="form-actions no-color col-xs-3">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        </span>
+        <br />
+    }
+</div>
 <div>
     <hr />
     <dl class="dl-horizontal col-xs-8" id="details">

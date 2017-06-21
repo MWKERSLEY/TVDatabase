@@ -18,9 +18,9 @@ function remoteTwist() {
         var YRel = e.pageY - $remote.offset().top;
         var width = $remote.width();
 
-        YAngle = -6-(0.5 - (XRel / width)) * 10;
-        XAngle = 60-(0.5 - (YRel / width)) * 10;
-        ZAngle = -6-(0.5 - (XRel / width)) * 10;
+        YAngle = -6-(0.5 - (XRel / width)) * 15;
+        XAngle = 60-(0.5 - (YRel / width)) * 15;
+        ZAngle = -6-(0.5 - (XRel / width)) * 15;
         $remote.css({ "transform": "perspective(525px) rotateX(" + XAngle + "deg) rotateY(" + YAngle + "deg) rotateZ(" + ZAngle + "deg)", "transition": "none", "-webkit-transition": "none" });
     });
 }

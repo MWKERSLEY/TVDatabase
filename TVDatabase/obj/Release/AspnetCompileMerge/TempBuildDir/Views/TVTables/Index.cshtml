@@ -3,14 +3,14 @@
 @{
     ViewBag.Title = "Browse";
 }
-
-<span id="browseTitle">
-    Browse All Shows
-</span>
-<span>
-    @Html.ActionLink("Add New Show", "Create", null, new { @class = "btn btn-success", @style = "vertical-align: middle; text-align:center; margin:10px; position:relative" })
-</span>
-
+<div id="topper">
+    <span id="browseTitle">
+        Browse All Shows
+    </span>
+    <span class="topButton">
+        @Html.ActionLink("Add New Show", "Create", null, new { @class = "btn btn-success", @style = "top: -10px; text-align:center; position:relative" })
+    </span>
+</div>
 @using (Html.BeginForm())
 {
     <p>
@@ -23,7 +23,6 @@
     @foreach (var item in Model)
     {
         <div>
-            @item.ShowName
             <a href="@Url.Action("Details", "TVTables", new { id = item.ID })" title="@item.ShowName - Show Details">
                 <figure>
                     @*<img alt="Details" src="@Url.Content(item.Image)">*@
