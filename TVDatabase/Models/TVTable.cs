@@ -56,7 +56,7 @@ namespace TVDatabase.Models
         [Display(Name = "Starring")]
         public string Actors { get; set; }
 
-        [Display(Name = "Highest Domestic Viewing Figures")]
+        [Display(Name = "Most Viewers")]
         public string PeakViewers { get; set; }
 
         [Display(Name = "Broadcasting Network")]

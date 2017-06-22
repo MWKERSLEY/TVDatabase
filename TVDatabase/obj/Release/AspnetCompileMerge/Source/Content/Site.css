@@ -11,8 +11,8 @@
     background-repeat:no-repeat;
 }*/
 html {
-    
-    height:100%;
+   height:125%;
+   min-height:800px;
 }
 body {
     padding-top: 0;
@@ -113,7 +113,7 @@ footer {
 	width: 25%;
     min-width:200px;
     position:fixed;
-    bottom:-25%;
+    bottom:-35%;
     margin:auto auto auto -12.5%;
     left:50%;
     z-index:10000;
@@ -124,6 +124,11 @@ footer {
 .row {
     margin-left:0;
     margin-right:0;
+}
+.buttonSpans {
+    margin-left:20px;
+    margin-top: 3px;
+    display:inline-block;
 }
 .row.equal {
     display: flex;
@@ -224,6 +229,18 @@ footer {
     padding-left:20px;
     background-color:#9FB6F4;
 }
+#topperCRUD {
+    padding-top:10px;
+    padding-left:20px;
+    background-color:#88A4F2;
+}
+
+.form-group, .form-group div, .form-group label {
+    margin-left:20px;
+}
+#editForm {
+    /*margin-bottom:5000px;*/
+}
 .topButton {
 }
 form p {
@@ -315,24 +332,8 @@ figcaption > p {
     color: #000077;
 }
 
-.form-group {
-    float:left;
-    margin:5px;
-    padding:10px;
-}
-
 #detailsPic {
 
-}
-@supports (-webkit-appearance:none) {
-    body {
-        height:100%;
-    }
-}
-@media only screen and (min-width: 768px) {
-    #b {
-        /*min-height:250px;*/
-    }
 }
 @media only screen and (max-width: 1200px) {
     body {
@@ -343,9 +344,6 @@ figcaption > p {
     }
 }
 @media only screen and (max-width: 767px) {
-    body {
-        height:100%;
-    }
     #remote {
         display:none;
     }
@@ -354,11 +352,17 @@ figcaption > p {
         padding:0;
         margin:0;
     }*/
+    html {
+        height:1400px;
+    }
 }
 
 @media only screen and (max-width: 420px) {
     .col-xs-1 {
         padding-right: 0;
         padding-left: 0;
+    }
+    html {
+        height:1500px;
     }
 }
